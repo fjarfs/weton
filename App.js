@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -32,19 +32,21 @@ const store = createStore(
   reducers
 );
 
-const App: () => React$Node = () => {
-  return (
-    <View style={{flex: 1}}>
-      <StatusBar
-        translucent
-        backgroundColor="transparent"
-        barStyle="dark-content"
-      />
-      <Provider store={store}>
-        <Weton />
-      </Provider>
-    </View>
-  );
+class appComponent extends Component {
+  render() {
+    return (
+      <View style={{flex: 1}}>
+        <StatusBar
+          translucent
+          backgroundColor="transparent"
+          barStyle="dark-content"
+        />
+        <Provider store={store}>
+          <Weton />
+        </Provider>
+      </View>
+    );
+  }
 };
 
-export default App;
+export default appComponent;
