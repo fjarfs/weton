@@ -16,6 +16,7 @@ const ANDROID_TIME_INTERVAL_BACK_BUTTON = 2000;
 let BACK_BUTTON_PRESSED_ONCE_TO_EXIT = false;
 
 class routerComponent extends Component {
+
     onBackPress() {
     if (Actions.state.index === 0) {
         if (BACK_BUTTON_PRESSED_ONCE_TO_EXIT) {
@@ -38,15 +39,24 @@ class routerComponent extends Component {
 
     render() {
         return (
+            // <Router backAndroidHandler={this.onBackPress} scheme="weton">
+            // <Stack key="root" navBar={CustomNavBar}>
+            //     <Scene
+            //     key="Main"
+            //     component={MainComponent}
+            //     hideNavBar
+            //     type="reset"
+            //     />
+            // </Stack>
+            // </Router>
             <Router backAndroidHandler={this.onBackPress} scheme="weton">
-            <Stack key="root" navBar={CustomNavBar}>
-                <Scene
-                key="Main"
+            <Scene key="root" navBar={CustomNavBar} >
+                <Scene key="main"
                 component={MainComponent}
-                hideNavBar
-                type="reset"
+                // title="Weton"
+                initial
                 />
-            </Stack>
+            </Scene>
             </Router>
         );
     }
