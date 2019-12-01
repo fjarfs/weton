@@ -8,23 +8,12 @@
 
 import React, {Component} from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
   View,
-  Text,
   StatusBar,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from 'redux';
+import {createStore} from 'redux';
 import reducers from './src/store/CombineReducer';
 import Weton from './src/router';
 
@@ -32,7 +21,7 @@ const store = createStore(
   reducers
 );
 
-class appComponent extends Component {
+class AppComponent extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
@@ -49,4 +38,4 @@ class appComponent extends Component {
   }
 };
 
-export default appComponent;
+export default AppComponent;

@@ -1,12 +1,31 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+import {
+  DashboardComponent,
+  HariComponent,
+  NeptuComponent,
+  AboutComponent,
+} from '@screens';
+import { CustomTabBar } from '@partials';
 
-export default class HelloWorldApp extends Component {
+class MainComponent extends Component {
+
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Hello, world!</Text>
-      </View>
+      <ScrollableTabView
+        style={{marginTop: 20, }}
+        initialPage={1}
+        tabBarPosition={'bottom'}
+        renderTabBar={() => <CustomTabBar titles={['Home', 'Hari', 'Neptu', 'About']} />}
+      >
+        <DashboardComponent tabLabel="home" />
+        <HariComponent tabLabel="event" />
+        <NeptuComponent tabLabel="assessment" />
+        <AboutComponent tabLabel="settings-applications" />
+      </ScrollableTabView>
     );
   }
+
 }
+
+export default MainComponent;
