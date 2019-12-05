@@ -10,7 +10,6 @@ import React, {Component} from 'react';
 import {Scene, Router, Stack, Actions} from 'react-native-router-flux';
 import {MainComponent} from '@screens';
 import {ToastAndroid} from 'react-native';
-import {CustomNavBar} from '@partials';
 
 const ANDROID_TIME_INTERVAL_BACK_BUTTON = 2000;
 let BACK_BUTTON_PRESSED_ONCE_TO_EXIT = false;
@@ -39,25 +38,16 @@ class routerComponent extends Component {
 
     render() {
         return (
-            // <Router backAndroidHandler={this.onBackPress} scheme="weton">
-            // <Stack key="root" navBar={CustomNavBar}>
-            //     <Scene
-            //     key="Main"
-            //     component={MainComponent}
-            //     hideNavBar
-            //     type="reset"
-            //     />
-            // </Stack>
-            // </Router>
             <Router backAndroidHandler={this.onBackPress} scheme="weton">
-            <Scene key="root" navBar={CustomNavBar} >
-                <Scene key="main"
+            <Stack key="root">
+              <Scene
+                key="Main"
                 component={MainComponent}
-                // title="Weton"
-                initial
-                />
-            </Scene>
-            </Router>
+                hideNavBar
+                type="reset"
+              />
+            </Stack>
+          </Router>
         );
     }
 };

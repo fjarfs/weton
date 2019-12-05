@@ -13,7 +13,6 @@ class MainComponent extends Component {
   render() {
     return (
       <ScrollableTabView
-        style={{marginTop: 0, marginBottom: 0, backgroundColor: '#000000' }}
         initialPage={0}
         tabBarPosition={'bottom'}
         renderTabBar={() => <CustomTabBar titles={['Home', 'Hari', 'Neptu', 'About']} />}

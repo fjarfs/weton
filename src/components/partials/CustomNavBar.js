@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
     height: 54,
     flexDirection: 'row',
     paddingTop: 20,
-    backgroundColor: 'black',
-    borderColor:'white',
+    backgroundColor: '#D81B60',
+    borderColor:'#D81B60',
     borderBottomWidth: 0.9,
   },
   navBarItem: {
@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   navBarItemText: {
-    fontFamily: 'ProximaNova-Bold',
     color: '#fff',
     fontSize: 20,
   },
@@ -28,7 +27,7 @@ export default class CustomNavBar extends React.Component {
   _renderMiddle() {
     return (
       <View style={styles.navBarItem}>
-        <Text style={styles.navBarItemText}>TITLE</Text>
+        <Text style={styles.navBarItemText}>Home</Text>
       </View>
     );
   }

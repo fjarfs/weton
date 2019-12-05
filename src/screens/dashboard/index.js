@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, ImageBackground } from 'react-native';
+import styles from './styles';
 
 export default class HelloWorldApp extends Component {
 
   render() {
-  
-    const styles = StyleSheet.create({
-      text: {
-        color: 'white'
-      }
-    });
-
     return (
-      <View >
-        <Text style={styles.text}>Home</Text>
-      </View>
+      <View style={styles.container}>
+				<View style={styles.topContent}>
+						<Text style={styles.topText}>Home</Text>
+				</View>
+        <Text></Text>
+			</View>
     );
   }
 }

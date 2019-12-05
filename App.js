@@ -22,6 +22,26 @@ const store = createStore(
 );
 
 class AppComponent extends Component {
+  async componentDidMount() {
+    // do stuff while splash screen is shown
+    // After having done stuff (such as async tasks) hide the splash screen
+    // debug network
+    // To see all the requests in the chrome Dev tools in the network tab.
+    XMLHttpRequest = GLOBAL.originalXMLHttpRequest
+      ? GLOBAL.originalXMLHttpRequest
+      : GLOBAL.XMLHttpRequest;
+    // fetch logger
+    global._fetch = fetch;
+    global.fetch = function(uri, options, ...args) {
+      return global._fetch(uri, options, ...args).then(response => {
+        return response;
+      });
+    };
+    // await this.checkPermission();
+    // await PermissionHelpers.requestReadSmsPermission();
+    // this.checkAppsInfo();
+  }
+
   render() {
     return (
       <View style={{flex: 1}}>
