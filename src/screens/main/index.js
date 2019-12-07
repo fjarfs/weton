@@ -14,12 +14,12 @@ class MainComponent extends Component {
       <ScrollableTabView
         initialPage={0}
         tabBarPosition={'bottom'}
-        renderTabBar={() => <CustomTabBar titles={['Home', 'Hari', 'Neptu', 'About']} />}
+        renderTabBar={() => <CustomTabBar titles={['Home', 'Hari', 'Neptu', 'Profil']} />}
       >
         <DashboardComponent tabLabel="home" />
         <HariComponent tabLabel="event" />
         <NeptuComponent tabLabel="assessment" />
-        <AboutComponent tabLabel="settings-applications" />
+        <AboutComponent tabLabel="account-circle" />
       </ScrollableTabView>
     );
   }

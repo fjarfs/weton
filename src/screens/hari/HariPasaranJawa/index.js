@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, FlatList, StatusBar, Text, Dimensions } from 'react-native';
-import { HariJawa } from '@partials';
+import { HariJawa, DataNotFound } from '@partials';
 import { CommonService } from '@services';
 import { ShimmerHariPasaranJawa } from './Shimmer/shimmer';
 
@@ -87,9 +87,7 @@ class HariPasaranJawaComponent extends Component {
     if (this.state.loaded) {
         if(this.state.hari.length <= 0) {
             return (
-                <View style={{ backgroundColor: '#fff', flex: 1 }}>
-                    <Text style={{textAlign: 'center', marginTop: 10}}>Data tidak ditemukan</Text>
-                </View>
+              <DataNotFound onPress={this.handleRefresh}/>
             );
         }
         return (

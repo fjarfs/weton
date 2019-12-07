@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0,
     borderLeftWidth: 0,
     borderRightWidth: 0,
-    borderColor: 'rgba(0,0,0,0.05)',
     backgroundColor: '#D81B60',
   },
   badge: {

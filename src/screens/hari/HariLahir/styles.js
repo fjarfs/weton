@@ -28,6 +28,6 @@ export default StyleSheet.create({
       paddingTop: 20,
     },
     titleText: {
-      fontSize: 15,
+      fontSize: 20,
     },
   });

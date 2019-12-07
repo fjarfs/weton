@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import { View, Modal, Text, Image, Platform, TouchableOpacity, ToastAndroid, TouchableHighlight } from 'react-native';
-
-/** REDUX */
-import {connect} from 'react-redux';
-import {Actions} from 'react-native-router-flux';
+import { View, Modal, Text, Platform, TouchableOpacity, TouchableHighlight } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-// import moment from 'moment';
 
 
 const styles = {
@@ -23,13 +18,7 @@ const styles = {
 		flexDirection: 'column'
 	},
 	notifTitle: {
-		// fontFamily: 'ProximaNova-Bold',
-		fontSize: 14,
-		color: '#000'
-	},
-	notifContent: {
-		// fontFamily: 'ProximaNova-Regular',
-		fontSize: 12,
+		fontSize: 20,
 		color: '#000'
 	},
 	badge: {
@@ -40,13 +29,6 @@ const styles = {
 		height: 12,
 		width: 12,
 		borderRadius: 20
-	},
-	notifDate: {
-		// fontFamily: 'ProximaNova-Regular',
-		fontSize: 12,
-		color: '#000',
-		paddingHorizontal: 20,
-		paddingTop: 20
 	},
 	topContent: {
 		flexDirection: 'row',
@@ -71,8 +53,18 @@ const styles = {
 		alignItems: 'center'
 		
 	},
+	textContent: {
+		fontSize: 20,
+		alignItems: 'center'
+
+	},
+	titleContent: {
+		fontSize: 30,
+		fontWeight: 'bold',
+		alignItems: 'center',
+	},
 	iconText: {
-		fontSize: 40,
+		fontSize: 30,
 		color: '#fff',
 	},
 	leftContainer: {
@@ -92,6 +84,12 @@ const styles = {
 		backgroundColor: '#FFF',
 		flex: 1
 	},
+	containerContent: {
+		paddingTop: 40,
+		padding: 20,
+		flexDirection: 'row',
+		alignItems: 'center',
+	}
 };
 
 class HariJawa extends Component {
@@ -109,15 +107,10 @@ class HariJawa extends Component {
 				this.setModalVisible(true);
 			  }}>
 				<Modal
-				onSwipeComplete={() => {
-					this.setModalVisible(false);
-				  }}
 					animationType="slide"
 					transparent={false}
 					visible={this.state.modalVisible}
-					onRequestClose={() => {
-						alert('Modal has been closed.');
-					}}>
+				>
 					<View style={styles.container}>
 						<View style={styles.topContent}>
 						<View style={styles.leftContainer}>
@@ -141,7 +134,25 @@ class HariJawa extends Component {
 							}}>
 							<Text style={styles.topText}>{this.props.item.name}</Text>
 						</TouchableHighlight>
+						
 						<View style={styles.rightContainer}></View>
+						</View>
+						<View  style={styles.containerContent}>
+							<Text style={styles.titleContent}>
+							{this.props.item.name}
+							</Text>
+						</View>
+						<View style={{borderBottomWidth: 1, borderBottomColor: '#ccc'}}></View>
+						<View style={styles.containerContent}>
+							<Text style={styles.textContent}>
+							{this.props.item.desc}
+							</Text>
+						</View>
+						<View style={{borderBottomWidth: 1, borderBottomColor: '#ccc'}}></View>
+						<View style={styles.containerContent}>
+							<Text style={styles.textContent}>
+							{this.props.item.name} mempunyai nilai {this.props.item.value} dalam perhitungan Jawa.
+							</Text>
 						</View>
 					</View>
 					
@@ -157,18 +168,24 @@ class HariJawa extends Component {
 								alignItems: 'center'
 							}}
 						>
-							<View style={{ position: 'relative', flex: 1 }}>
-								<Image
-									source={require('@images/weton.png')}
-									style={{ height: 50, width: 50 }}
-								/>
-							</View>
-							<View style={[styles.messageDescription, { flex: 3 }]}>
+							
+							<View style={[styles.messageDescription, { flex: 4 }]}>
 								<Text style={styles.notifTitle}>
 								{this.props.item.name}
 								</Text>
-								<Text style={styles.notifContent}>
-									{this.props.item.name}
+							</View>
+							<View style={{ position: 'relative', flex: 1, }}>
+								
+							</View>
+							
+							<View style={{ position: 'relative', flex: 1, }}>
+							<Text>
+								<Icon style={{textAlign: 'right',}}
+									name='keyboard-arrow-right'
+									size={20}
+									color='#000'
+									
+								/>
 								</Text>
 							</View>
 						</View>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, FlatList, StatusBar, Text, Dimensions } from 'react-native';
-import { HariCard } from '@partials';
+import { View, FlatList, StatusBar, Text } from 'react-native';
+import { HariCard, DataNotFound } from '@partials';
 import { CommonService } from '@services';
 import { ShimmerHariLahir } from './Shimmer/shimmer';
 
@@ -92,9 +92,7 @@ class HariLahirComponent extends Component {
     if (this.state.loaded) {
         if(this.state.hari.length <= 0) {
             return (
-                <View style={{ backgroundColor: '#fff', flex: 1 }}>
-                    <Text style={{textAlign: 'center', marginTop: 10}}>Data tidak ditemukan</Text>
-                </View>
+                <DataNotFound onPress={this.handleRefresh}/>
             );
         }
         return (
