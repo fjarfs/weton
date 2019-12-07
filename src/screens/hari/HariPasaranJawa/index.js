@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, FlatList, StatusBar, Text, Dimensions } from 'react-native';
-import { HariCard } from '@partials';
+import { HariJawa } from '@partials';
 import { CommonService } from '@services';
 import { ShimmerHariPasaranJawa } from './Shimmer/shimmer';
 
@@ -41,7 +41,7 @@ class HariPasaranJawaComponent extends Component {
         page: this.state.page,
         per_page: this.state.per_page,
       };
-      CommonService.gethari(params).then((hari) => {
+      CommonService.gethariJawa(params).then((hari) => {
         this.setState({
             hari: this.state.page === 1 ? hari.data.data : [...this.state.hari, ...hari.data.data],
           loaded: true,
@@ -64,31 +64,26 @@ class HariPasaranJawaComponent extends Component {
     }
 
     renderItem({item}) {
-        return <HariCard item={item} />;
+        return <HariJawa item={item} />;
     }
 
   renderList() {
     
     return (
-      <View style={{ flex: 1 }}>
         <FlatList
               data={this.state.hari} 
-              style={{ borderTopWidth: 1, borderColor: '#ececec',  }}
               keyExtractor={(item, index) => index.toString()}
               renderItem={this.renderItem}
               onEndReached={this.handleLoadMore}
               onEndReachedThreshold={0.3}
               onEndThreshold={0}
               refreshing={this.state.isRefreshing}
-              numColumns={2}
               onRefresh={this.handleRefresh}
             />
-      </View>
     );
   }
 
   render() {
-    
     if (this.state.loaded) {
         if(this.state.hari.length <= 0) {
             return (

@@ -8,8 +8,18 @@ const gethari = (param) => {
 	});
 };
 
+
+const gethariJawa = (param) => {
+	return request({
+		url: 'hariJawa.php',
+		method: 'get',
+		params: param
+	});
+};
+
 const CommonService = {
-	gethari
+	gethari,
+	gethariJawa
 };
 
 export default CommonService;

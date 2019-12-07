@@ -1,11 +1,11 @@
 import CustomNavBar from './CustomNavBar';
 import CustomTabBar from './CustomTabBar';
 import HariCard from './HariCard';
-import Button from './Button';
+import HariJawa from './HariJawa';
 
 export {
   CustomNavBar,
   CustomTabBar,
   HariCard,
-  Button,
+  HariJawa
 };

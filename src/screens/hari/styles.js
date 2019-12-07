@@ -9,7 +9,7 @@ export default StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
-		height: Platform.Version <= 19 ? 55 : 70,
+		height: 80,
 		backgroundColor: '#D81B60',
 		borderWidth: 0,
 		borderRadius: 2,
@@ -20,7 +20,7 @@ export default StyleSheet.create({
 		shadowOpacity: 0.5,
 		shadowRadius: 2,
 		elevation: 2,
-		paddingTop: Platform.Version <= 19 ? 0 : 20,
+		paddingTop: 30
 	},
 	topText: {
 		fontSize: 20,
