@@ -9,7 +9,6 @@ import {
 import { CustomTabBar } from '@partials';
 
 class MainComponent extends Component {
-
   render() {
     return (
       <ScrollableTabView

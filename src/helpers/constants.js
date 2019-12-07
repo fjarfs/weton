@@ -1,7 +1,7 @@
 //  API endpoint target
 const config = {
 	api_url: 'fajarsujito.net/',
-	api_protocol: 'http://',
+	api_protocol: 'https://',
 };
 
 export {

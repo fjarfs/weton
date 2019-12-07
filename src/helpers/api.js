@@ -12,6 +12,7 @@ import ServerValidation from '@helpers/ServerValidation';
 import CustomAlert from '@helpers/CustomAlert';
 import axios from 'axios';
 import { config } from './constants';
+import callAlert from '@helpers/CustomAlert';
 
 /**
  * Create an Axios Client with defaults
@@ -35,14 +36,11 @@ const request = async options => {
       Accept: 'application/json'
     };
   }
-  console.log('check options', options);
   const onSuccess = response => {
-    console.debug('Request Successful!', response);
     return response.data;
   };
 
   const onError = error => {
-    console.debug('Request Failed:', error.config);
 
     if (error.response) {
       // Request was made but server responded with something
@@ -71,7 +69,8 @@ const request = async options => {
     } else {
       // Something else happened while setting up the request
       // triggered the error
-      console.debug('Error Message:', error.message);
+      console.log('Error Messages:', error.message);
+      callAlert('Peringatan!', 'Terjadi Kesalahan Server. Pastikan Anda terhubung dengan internet');
     }
 
     return Promise.reject(error.response || error.message);

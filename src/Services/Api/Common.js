@@ -1,9 +1,10 @@
 import request from '@helpers/api';
 
-const gethari = () => {
+const gethari = (param) => {
 	return request({
 		url: 'hari.php',
-		method: 'get'
+		method: 'get',
+		params: param
 	});
 };
 

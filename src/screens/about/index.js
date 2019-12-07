@@ -14,7 +14,7 @@ export default class HelloWorldApp extends Component {
 						<Text style={styles.appText}>App Version</Text>
 				</View>
         <View style={styles.bottomContent}>
-						<Text style={styles.versionText}>0.0.1</Text>
+						<Text style={styles.versionText}>1.1.0</Text>
 				</View>
 			</View>
     );

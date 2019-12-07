@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { View, FlatList, StatusBar, Text, Dimensions } from 'react-native';
 import { HariCard } from '@partials';
 import { CommonService } from '@services';
-import { ShimmerHariLahir } from './Shimmer/shimmer';
+import { ShimmerHariPasaranJawa } from './Shimmer/shimmer';
 
-class HariLahirComponent extends Component {
+class HariPasaranJawaComponent extends Component {
   state = {
     loaded: false,
     isRefreshing: false,
@@ -105,10 +105,10 @@ class HariLahirComponent extends Component {
     }
     return (
       <View style={{ backgroundColor: '#fff', flex: 1 }}>
-        <ShimmerHariLahir />
+        <ShimmerHariPasaranJawa />
       </View>
     );
   }
 }
 
-export default HariLahirComponent;
+export default HariPasaranJawaComponent;

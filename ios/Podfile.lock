@@ -1,5 +1,7 @@
 PODS:
   - boost-for-react-native (1.63.0)
+  - BVLinearGradient (2.5.4):
+    - React
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.61.5)
   - FBReactNativeSpec (0.61.5):
@@ -182,6 +184,10 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
   - React-jsinspector (0.61.5)
+  - react-native-netinfo (2.0.10):
+    - React
+  - react-native-sensitive-info (5.5.3):
+    - React
   - react-native-viewpager (3.1.0):
     - React
   - React-RCTActionSheet (0.61.5):
@@ -219,6 +225,8 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
+  - RNCAsyncStorage (1.6.3):
+    - React
   - RNGestureHandler (1.5.2):
     - React
   - RNReanimated (1.4.0):
@@ -230,6 +238,7 @@ PODS:
   - Yoga (1.14.0)
 
 DEPENDENCIES:
+  - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
@@ -246,6 +255,8 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
+  - react-native-sensitive-info (from `../node_modules/react-native-sensitive-info`)
   - "react-native-viewpager (from `../node_modules/@react-native-community/viewpager`)"
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -258,6 +269,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -269,6 +281,8 @@ SPEC REPOS:
     - boost-for-react-native
 
 EXTERNAL SOURCES:
+  BVLinearGradient:
+    :path: "../node_modules/react-native-linear-gradient"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   FBLazyVector:
@@ -297,6 +311,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-netinfo:
+    :path: "../node_modules/@react-native-community/netinfo"
+  react-native-sensitive-info:
+    :path: "../node_modules/react-native-sensitive-info"
   react-native-viewpager:
     :path: "../node_modules/@react-native-community/viewpager"
   React-RCTActionSheet:
@@ -319,6 +337,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-community/async-storage"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
@@ -332,6 +352,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  BVLinearGradient: 8cbc5155c978f2e43098818c91d206d07aae6d30
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   FBLazyVector: aaeaf388755e4f29cd74acbc9e3b8da6d807c37f
   FBReactNativeSpec: 118d0d177724c2d67f08a59136eb29ef5943ec75
@@ -346,6 +367,8 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
+  react-native-netinfo: c5a291927e79059bf35169097b2ff0db71418134
+  react-native-sensitive-info: c93d905f8d875daead38e5affc100390544584bd
   react-native-viewpager: 0070878575304aef182e5ff9fcc019335aa278a6
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
@@ -357,12 +380,13 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
+  RNCAsyncStorage: 6b57de0f6cb0dcfd17521af1681fa39001d3efff
   RNGestureHandler: 946a7691e41df61e2c4b1884deab41a4cdc3afff
   RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
   RNScreens: f28b48b8345f2f5f39ed6195518291515032a788
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: ff010d98bb259db12eb2ef3c3fa63e5e0e61da89
+PODFILE CHECKSUM: 4c0ed5de089b9b9930d03de36d4cb013a8cf72f8
 
 COCOAPODS: 1.8.4

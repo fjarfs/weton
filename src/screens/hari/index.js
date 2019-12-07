@@ -3,11 +3,11 @@ import { Text, View, StyleSheet, FlatList } from 'react-native';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 import {
   HariLahirComponent,
+  HariPasaranJawaComponent
 } from '@screens';
 import styles from './styles';
 
 class HariComponent extends Component {
-
   render() {
     return (
       <View style={styles.container}>
@@ -24,8 +24,8 @@ class HariComponent extends Component {
           tabBarInactiveTextColor='black'
           renderTabBar={() => <DefaultTabBar />}
         >
-          <HariLahirComponent tabLabel='Hari Lahir' />
-          <Text tabLabel='Hari Pasaran Jawa'>favorite</Text>
+          <HariLahirComponent key="hariLahir" tabLabel='Hari Lahir' />
+          <HariPasaranJawaComponent key="hariJawa" tabLabel='Hari Pasaran Jawa'/>
         </ScrollableTabView>
 			</View>
 

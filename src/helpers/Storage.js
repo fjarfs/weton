@@ -54,14 +54,14 @@ const setAuthorization = async value => {
 
 const getAuthorization = async () => {
 	try {
-		const auth = await SInfo.getItem('authorization', qzkSharefPreferences);
+		const auth = await SInfo.getItem('authorizationa', qzkSharefPreferences);
 		if (auth !== null) {
 			const bytes = CryptoJS.AES.decrypt(auth, 'SAMP-CRYPT');
 			return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 		}
 		return null;
 	} catch (error) {
-		console.error('Error Retrieving Data', error);
+		console.warn('Error Retrieving Data', error);
 		return null;
 	}
 };
