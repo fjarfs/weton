@@ -9,6 +9,7 @@ import {
   Platform
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const style = {
   container: {
@@ -32,7 +33,7 @@ const style = {
   },
   imgContainer: {
     padding: 15,
-    backgroundColor: '#fff',
+    backgroundColor: '#e1e4e8',
   },
   images: {
     flex: 1,
@@ -138,9 +139,25 @@ const style = {
 		alignItems: 'center',
 		paddingRight: 10,
 	  },
-	container: {
+	modalContainer: {
 		backgroundColor: '#FFF',
 		flex: 1
+  },
+  containerContent: {
+		paddingTop: 40,
+		padding: 20,
+		flexDirection: 'row',
+		alignItems: 'center',
+  },
+  textContent: {
+		fontSize: 20,
+		alignItems: 'center'
+
+	},
+	titleContent: {
+		fontSize: 30,
+		fontWeight: 'bold',
+		alignItems: 'center',
 	},
 };
 
@@ -181,7 +198,7 @@ class ProductCard extends Component {
 					transparent={false}
 					visible={this.state.modalVisible}
 				>
-					<View style={style.container}>
+					<View style={style.modalContainer}>
 						<View style={style.topContent}>
 						<View style={style.leftContainer}>
 							<TouchableHighlight
@@ -206,8 +223,34 @@ class ProductCard extends Component {
 						</TouchableHighlight>
 						<View style={style.rightContainer}></View>
 						</View>
+            <View>
+            <Image source={{uri: this.props.item.image}} style={{top:2, width: "100%", height: 200, backgroundColor: '#e1e4e8'}}/>
+            </View>
+            <ScrollView>
+            <View style={[style.containerContent, {justifyContent: 'center'}]}>
+							<Text style={style.titleContent}>
+              {this.props.item.name}
+							</Text>
+						</View>
+            <View style={{borderBottomWidth: 1, borderBottomColor: '#ccc'}}></View>
+            <View style={style.containerContent}>
+							<Text style={style.textContent}>
+							{this.props.item.desc}
+							</Text>
+						</View>
+            <View style={{borderBottomWidth: 1, borderBottomColor: '#ccc'}}></View>
+						<View style={style.containerContent}>
+							<Text style={style.textContent}>
+							{this.props.item.name} mempunyai nilai {this.props.item.value} dalam perhitungan Jawa.
+							</Text>
+						</View>
+            <View style={style.containerContent}>
+              </View>
+            </ScrollView>
+            
+            
+            
 					</View>
-					
 				</Modal>
 
         <View style={style.containerBg}>

@@ -2,7 +2,7 @@ import request from '@helpers/api';
 
 const gethari = (param) => {
 	return request({
-		url: 'hari.php',
+		url: 'weton/hari.php',
 		method: 'get',
 		params: param
 	});
@@ -11,7 +11,7 @@ const gethari = (param) => {
 
 const gethariJawa = (param) => {
 	return request({
-		url: 'hariJawa.php',
+		url: 'weton/hariJawa.php',
 		method: 'get',
 		params: param
 	});
