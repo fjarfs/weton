@@ -10,14 +10,14 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { ScrollView } from 'react-native-gesture-handler';
+import Button from './Button';
 
 const style = {
   container: {
     marginVertical: 3,
     padding: 5,
-    flex: -1,
-    width: '50%',
-    flexDirection: 'column',
+    flex: 1,
+    flexDirection: 'column'
   },
   containerBg: {
     backgroundColor: '#fff',
@@ -32,72 +32,33 @@ const style = {
     elevation: 2,
   },
   imgContainer: {
-    padding: 15,
     backgroundColor: '#e1e4e8',
   },
   images: {
     flex: 1,
     width: '100%',
-    height: 150,
-  },
-  productDescContainer: {
-    borderColor: '#ececec',
-    borderTopWidth: 1,
-    paddingHorizontal: 10,
-    paddingTop: 10,
+    height: 200,
   },
   productName: {
     flex: 1,
     paddingVertical: 5,
-    textAlign: 'center',
+    padding: 10,
+    marginTop: 20,
+    textAlign: 'left',
     fontSize: 20,
     color: '#000',
     width: '100%',
     height: 60,
   },
-  priceContainer: {
-    marginBottom: 10,
-    height: 40,
-  },
-  salePrice: {
-    fontSize: 14,
-    color: '#DC1E2D',
-    lineHeight: 18,
+  button: {
+    flex: -1,
+    paddingVertical: 5,
+    padding: 10,
     textAlign: 'left',
-    textDecorationLine: 'line-through',
-    textDecorationStyle: 'solid',
-  },
-  price: {
-    fontSize: 18,
-    color: '#000',
-    lineHeight: 24,
-    textAlign: 'left',
+    height: 60,
   },
   mainContainer: {
 		flexDirection: 'column',
-	},
-	segmentContainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		borderBottomWidth: 1,
-		borderColor: '#ececec',
-		padding: 20
-	},
-	messageDescription: {
-		flexDirection: 'column'
-	},
-	notifTitle: {
-		fontSize: 20,
-		color: '#000'
-	},
-	badge: {
-		backgroundColor: '#DC1E2D',
-		position: 'absolute',
-		top: 0,
-		left: 0,
-		height: 12,
-		width: 12,
-		borderRadius: 20
 	},
 	topContent: {
 		flexDirection: 'row',
@@ -164,7 +125,6 @@ const style = {
 
 class ProductCard extends Component {
   renderImage() {
-    const image = require('@images/' + 'weton.png');
     return (
       <View style={style.imgContainer}>
         <Image
@@ -176,11 +136,11 @@ class ProductCard extends Component {
     );
   }
 
-  renderImageByName(image_url) {
+  renderImageByName(image) {
     return (
       <View style={style.imgContainer}>
         <Image
-          source={{uri: image_url}}
+          source={{uri: image}}
           resizeMode="cover"
           style={{width: "100%", height: 200, backgroundColor: '#e1e4e8'}}
         />
@@ -255,7 +215,7 @@ class ProductCard extends Component {
             <View style={{borderBottomWidth: 1, borderBottomColor: '#ccc'}}></View>
 						<View style={style.containerContent}>
 							<Text style={style.textContent}>
-							{this.props.item.name} mempunyai nilai {this.props.item.value} dalam perhitungan Jawa.
+							{this.props.item.name} mempunyai nilai {this.props.item.value.toString()} dalam perhitungan Jawa.
 							</Text>
 						</View>
             <View style={style.containerContent}>
@@ -269,15 +229,20 @@ class ProductCard extends Component {
 
         <View style={style.containerBg}>
         {this.renderImage()}
-          <View style={style.productDescContainer}>
+          <View style={{flex: 1, flexDirection: 'row'}}>
             <Text
               style={style.productName}
               numberOfLines={2}
               ellipsizeMode="tail">
               {this.props.item.name}
             </Text>
+              <Button onPress={() => {
+                this.setModalVisible(true);
+                }}
+                style={[style.button, {alignItems: 'flex-end'}]}>
+              <Text style={{fontSize: 20}}>Detail</Text>
+              </Button>
           </View>
-         
         </View>
         </TouchableOpacity>
       </View>

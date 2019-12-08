@@ -8,7 +8,6 @@ const gethari = (param) => {
 	});
 };
 
-
 const gethariJawa = (param) => {
 	return request({
 		url: 'weton/hariJawa.php',
@@ -17,9 +16,18 @@ const gethariJawa = (param) => {
 	});
 };
 
+const getNeptu = (param) => {
+	return request({
+		url: 'weton/neptu.php',
+		method: 'get',
+		params: param
+	});
+};
+
 const CommonService = {
 	gethari,
-	gethariJawa
+	gethariJawa,
+	getNeptu
 };
 
 export default CommonService;

@@ -4,6 +4,7 @@ import HariCard from './HariCard';
 import HariJawa from './HariJawa';
 import Button from './Button';
 import DataNotFound from './DataNotFound';
+import NeptuCard from './NeptuCard';
 
 export {
   CustomNavBar,
@@ -12,4 +13,6 @@ export {
   HariJawa,
   Button,
   DataNotFound,
+  NeptuCard
 };
+
