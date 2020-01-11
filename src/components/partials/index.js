@@ -6,6 +6,7 @@ import Button from './Button';
 import DataNotFound from './DataNotFound';
 import NeptuCard from './NeptuCard';
 import Input from './Input';
+import Datepicker from './Datepicker';
 
 export {
   CustomNavBar,
@@ -15,6 +16,7 @@ export {
   Button,
   DataNotFound,
   NeptuCard,
-  Input
+  Input,
+  Datepicker
 };
 
